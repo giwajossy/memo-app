@@ -1,0 +1,170 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html { font-family: "Montserrat", sans-serif; }
+
+  body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+    width: 100;
+  }
+  
+  .emptyView {
+    padding: 5%;
+    text-align: center;
+    max-height: 100%;
+    font-size: 1.6em;
+    font-weight: 100;
+    color: rgba(0, 0, 0, .5);
+  }
+  
+  header {
+    background-color: #295FFF;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  header span {
+    float: right;
+    -webkit-border-radius: 50px;    
+    border-radius: 50px;
+    background: #295FFF;
+  }
+  
+  header h1 {
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+  }
+  
+  footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+  }
+  
+  footer p { color: #ccc; }
+
+  .note {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    float: left;
+  }
+
+  .note h1 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+    padding: 2%;
+  }
+
+  .note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding-top: 5%;
+    padding-bottom: 4%;
+  }
+  
+  .note button {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    border: none;
+    width: 25px;
+    height: 28px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 100%;
+    background-color: transparent;
+  }
+  
+  .note .deleteButton, .note .editButton {
+    color: rgba(0, 0, 0, 0.15);
+  }
+  
+  .note .deleteButton:hover, .note .editButton:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  form.create-note {
+    position: relative;
+    width: 480px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+  }
+  
+  form.create-note input,
+  form.create-note textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+  form.create-note input {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+  }
+  
+  form.create-note button {
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #295FFF;
+    color: #fff;
+    border: none;
+    border-radius: 40% 10% 40%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+  }
+
+  form.create-note button:disabled { display: none; }
+  
+  form.create-note button:hover { background: #295FFF;}   
+  
+  /* Mobile screen */  
+  @media only screen and (max-width: 700px) {
+  
+    body { overflow-y: scroll; }
+  
+    .form-container {
+      align-content: center;
+      width: 80%;
+      margin: 1% auto 10% 4%;
+    }
+  
+    form.create-note {
+      position: relative;
+      margin: 30px auto 20px 23px;
+      width: 100%;
+    }
+  
+    header h1 { font-size: 1.4rem; }
+  
+    footer { display: none;}
+  
+    .emptyView {
+      font-size: 1em;
+      font-weight: 100;
+    }
+  
+  }

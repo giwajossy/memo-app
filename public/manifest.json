@@ -1,0 +1,8 @@
+{
+  "short_name": "Memo App",
+  "name": "Memo App",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#295FFF",
+  "background_color": "#ffffff"
+}
