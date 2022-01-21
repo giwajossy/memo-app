@@ -1,6 +1,6 @@
 # Memo App
 
-A Simple, free, easy to use! Take quick notes on the fly, make a to do list for the day and write down things you need to remember. [Click to preview Live Demo](https://******/)
+A Simple, free, easy to use! Take quick notes on the fly, make a to do list for the day and write down things you need to remember. [Click to preview Live Demo](https://use-memo-app.netlify.app/)
 
 - Modelled after the [Google Keep App](https://keep.google.com/)
 
