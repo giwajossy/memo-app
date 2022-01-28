@@ -5,6 +5,8 @@ import CreateNote from "./CreateNote"
 import Note from "./Note"
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Zoom from '@mui/material/Zoom';
+import { v4 as uuidv4 } from 'uuid';
+
 
 export interface IState {
   note: {
@@ -34,7 +36,7 @@ export type INoteProp = {
 
 
 
-const App = (): JSX.Element => {
+const App: React.FC = (): JSX.Element => {
 
   const [notes, setNotes] = useState<IState["notes"]>([])
 
@@ -127,6 +129,7 @@ const App = (): JSX.Element => {
     }
   }
 
+  // Displays the welcome message until a note gets created
   let displayView: React.CSSProperties = {
     display: notes.length === 0 ? null : "none"
   } as any
@@ -135,7 +138,7 @@ const App = (): JSX.Element => {
   return (
     <div>
       <Header />
-      <CreateNote whenClicked={addNote} />
+      <CreateNote whenClicked={addNote} addButtonStatus={false} />
 
       <Zoom in={true}>
         <div className="emptyView" style={displayView}>
@@ -148,7 +151,7 @@ const App = (): JSX.Element => {
       {
         notes.map((noteDetails, index) => {
           return <Note
-            key={index}
+            key={uuidv4()}
             id={index}
             title={noteDetails.title}
             content={noteDetails.content}
@@ -157,7 +160,6 @@ const App = (): JSX.Element => {
         })
       }
 
-      {/* <Footer /> */}
     </div>
   );
 }

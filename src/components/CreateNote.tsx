@@ -6,20 +6,21 @@ import { IState as Props } from "./App"
 
 type IProps = {
   whenClicked: Props['whenClicked']
+  addButtonStatus: boolean
 }
 
 
 const CreateArea: React.FC<IProps> = ({ whenClicked }): JSX.Element => {
 
-  const [note, setNote] = useState({
+  const [note, setNote] = useState<Props['note']>({
     title: "",
     content: ""
   })
 
   const focusStatus = false
-  const [isFocused, setIsFocused] = useState(focusStatus)
+  const [isFocused, setIsFocused] = useState<Props['focused']>(focusStatus)
 
-  const [buttonStatus, setButtonStatus] = useState(true) // Disabled by default
+  const [buttonStatus, setButtonStatus] = useState<IProps['addButtonStatus']>(true) // Disabled by default
 
   const handleFocus = (): void => setIsFocused(true)
 

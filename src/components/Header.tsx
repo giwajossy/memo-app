@@ -1,7 +1,7 @@
 import React from "react"
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 
-const Header = () => {
+const Header: React.FC = (): JSX.Element => {
     return (
         <header>
             <h1>
