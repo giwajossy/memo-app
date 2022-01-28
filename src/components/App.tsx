@@ -5,6 +5,8 @@ import CreateNote from "./CreateNote"
 import Note from "./Note"
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Zoom from '@mui/material/Zoom';
+import { v4 as uuidv4 } from 'uuid';
+
 
 export interface IState {
   note: {
@@ -149,7 +151,7 @@ const App: React.FC = (): JSX.Element => {
       {
         notes.map((noteDetails, index) => {
           return <Note
-            key={index}
+            key={uuidv4()}
             id={index}
             title={noteDetails.title}
             content={noteDetails.content}
