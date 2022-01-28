@@ -34,7 +34,7 @@ export type INoteProp = {
 
 
 
-const App = (): JSX.Element => {
+const App: React.FC = (): JSX.Element => {
 
   const [notes, setNotes] = useState<IState["notes"]>([])
 
@@ -127,6 +127,7 @@ const App = (): JSX.Element => {
     }
   }
 
+  // Displays the welcome message until a note gets created
   let displayView: React.CSSProperties = {
     display: notes.length === 0 ? null : "none"
   } as any
@@ -135,7 +136,7 @@ const App = (): JSX.Element => {
   return (
     <div>
       <Header />
-      <CreateNote whenClicked={addNote} />
+      <CreateNote whenClicked={addNote} addButtonStatus={false} />
 
       <Zoom in={true}>
         <div className="emptyView" style={displayView}>
@@ -157,7 +158,6 @@ const App = (): JSX.Element => {
         })
       }
 
-      {/* <Footer /> */}
     </div>
   );
 }
