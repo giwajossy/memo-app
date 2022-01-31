@@ -6,6 +6,8 @@ import Note from "./Note"
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Zoom from '@mui/material/Zoom';
 import { v4 as uuidv4 } from 'uuid';
+import { ToastContainer, toast, Zoom as IZoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export interface IState {
@@ -126,6 +128,10 @@ const App: React.FC = (): JSX.Element => {
         })
       })
 
+      toast.info(`Successfully Edited Note`, {
+        position:  toast.POSITION.BOTTOM_RIGHT
+      });
+
     }
   }
 
@@ -159,7 +165,7 @@ const App: React.FC = (): JSX.Element => {
             onEdit={editNote} />
         })
       }
-
+      <ToastContainer  role="alert" transition={IZoom} limit={3}/>
     </div>
   );
 }
