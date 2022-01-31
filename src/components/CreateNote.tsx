@@ -45,8 +45,9 @@ const CreateArea: React.FC<IProps> = ({ whenClicked }): JSX.Element => {
 
     if (!note.title || !note.content) return
     whenClicked(note)
-    toast.success(`Added New Note 🙂`, {
-      position:  toast.POSITION.BOTTOM_RIGHT
+    toast.info(`Added New Note `, {
+      position:  toast.POSITION.BOTTOM_RIGHT,
+      icon: "☑️"
     });
     setNote({
       title: "",
