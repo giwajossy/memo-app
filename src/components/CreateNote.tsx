@@ -3,6 +3,8 @@ import AddIcon from '@mui/icons-material/Add';
 import Fab from '@mui/material/Fab';
 import Zoom from '@mui/material/Zoom';
 import { IState as Props } from "./App"
+import { ToastContainer, toast, Zoom as IZoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 type IProps = {
   whenClicked: Props['whenClicked']
@@ -43,6 +45,9 @@ const CreateArea: React.FC<IProps> = ({ whenClicked }): JSX.Element => {
 
     if (!note.title || !note.content) return
     whenClicked(note)
+    toast.success(`Added New Note 🙂`, {
+      position:  toast.POSITION.BOTTOM_RIGHT
+    });
     setNote({
       title: "",
       content: ""
@@ -77,8 +82,9 @@ const CreateArea: React.FC<IProps> = ({ whenClicked }): JSX.Element => {
             <AddIcon />
           </Fab>
         </Zoom>
-
       </form>
+
+      <ToastContainer  role="alert" transition={IZoom} limit={3}/>
     </div>
   );
 }
